@@ -1,0 +1,69 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+$sizes: (
+	'xxxs': 4px,
+	'xxs': 8px,
+	'xs': 12px,
+	's': 16px,
+	'm': 24px,
+	'l': 32px,
+	'xl': 40px,
+	'xxl': 48px,
+	'xxxl': 56px,
+	'xxxxl': 64px,
+	'mega': 96px
+);
+
+// Breakpoints
+@mixin breakpoint-tablet {
+	@media (min-width: 744px) {
+		@content;
+	}
+}
+@mixin breakpoint-desktop {
+	@media (min-width: 1280px) {
+		@content;
+	}
+}
+
+@mixin hideScrollbar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+@mixin maskedBackground {
+	background-color: currentColor;
+	mask-size: contain;
+	mask-position: center;
+	mask-repeat: no-repeat;
+}
+
+@mixin absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+:root {
+	@each $size-name, $size-value in $sizes {
+		--spacing-#{$size-name}: #{$size-value};
+	}
+
+	--container-gap: var(--spacing-s);
+
+	--color-primary: #cdb4db;
+	--color-secondary: #ffc8dd;
+	--color-accent: #ffafcc;
+	--color-background: #bde0fe;
+	--color-background-secondary: #a2d2ff;
+
+	--z-index-navbar: 1;
+	--z-index-modal: 2;
+
+	@include breakpoint-tablet() {
+		--container-gap: var(--spacing-xxxxl);
+	}
+}
