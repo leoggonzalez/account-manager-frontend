@@ -7,3 +7,14 @@ body {
 	color: var(--color-tint);
 	font-family: 'Noto Sans', sans-serif;
 }
+
+button {
+	border: 0px;
+	background-color: transparent;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	appearance: none;
+	padding: 0;
+}

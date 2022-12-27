@@ -22,9 +22,14 @@
 			(key) => `box--padding-${key}-${padding[key as keyof Padding]}`
 		);
 	}
+
+	export let card = false;
 </script>
 
-<div class={classnames('box', ...getPaddingArray(padding), ...getPaddingArray(tabletPadding))}>
+<div
+	class={classnames('box', ...getPaddingArray(padding), ...getPaddingArray(tabletPadding))}
+	class:card
+>
 	<slot />
 </div>
 
@@ -83,6 +88,11 @@
 					}
 				}
 			}
+		}
+
+		&.card {
+			background-color: var(--color-background-secondary);
+			border-radius: var(--spacing-xs);
 		}
 	}
 </style>
