@@ -19,4 +19,6 @@ declare namespace App {
 		| 'xxxl'
 		| 'xxxxl'
 		| 'mega';
+	type Justify = 'left' | 'center' | 'right' | 'space-between' | 'space-around';
+	type Align = 'top' | 'center' | 'bottom' | 'space-between';
 }

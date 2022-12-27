@@ -1,6 +1,9 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 @import './styles/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
 
 body {
 	background-color: var(--color-background);
+	color: var(--color-tint);
+	font-family: 'Noto Sans', sans-serif;
 }
